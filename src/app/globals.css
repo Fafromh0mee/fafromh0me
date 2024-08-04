@@ -17,13 +17,43 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: hwb(256 1% 89%);
+}
+
+.box {
+  display: flex;
+}
+
+.box .eye {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: block;
+  border-radius: 50%;
+  background: #ffffff;
+  margin: 0 20px;
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 2);
+  inset: 0 0 15px hwb(212 60% 20%);
+  inset: 0 0 25px hwb(131 67% 4%);
+}
+
+.box .eye::before {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  display: block;
+  border-radius: 50%;
+  background: #000000;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  border: 10px solid hsl(207, 87%, 79%);
+  box-sizing: border-box;
 }
 
 @layer utilities {
